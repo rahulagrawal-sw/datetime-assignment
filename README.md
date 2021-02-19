@@ -22,6 +22,6 @@ Input date time : 21-01-2021 06:07:10 AM
 
 * Output:
 
-Valid Date : 21st-Jan -Twenty Twenty
+Valid Date : 21st-Jan -Twenty TwentyOne
 
 Valid Time : Six Hours Seven Minutes Ten Seconds - Morning
