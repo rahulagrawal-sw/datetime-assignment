@@ -1,7 +1,14 @@
 # Instructions to run this assignment
 You can change datetime input values in Main.java class and run this as simple java application using any editor
 
-Also you can run individual JUnit's (created unit JUnit 5 / Jupitor)
+Also you can run individual JUnit's (created using JUnit 5 / Jupiter)
+
+# Pre-requisites
+
+* Java 11
+* JUnit 5
+* Maven
+* IntelliJ Editor (optional)
 
 # datetime-assignment - problem statement
 
