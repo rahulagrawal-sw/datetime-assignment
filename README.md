@@ -1,5 +1,6 @@
 # Instructions to run this assignment
 You can change datetime input values in Main.java class and run this as simple java application using any editor
+
 Also you can run individual JUnit's (created unit JUnit 5 / Jupitor)
 
 # datetime-assignment - problem statement
@@ -21,4 +22,5 @@ Input date time : 21-01-2021 06:07:10 AM
 
 * Output:
 Valid Date : 21st-Jan -Twenty Twenty
+
 Valid Time : Six Hours Seven Minutes Ten Seconds - Morning
