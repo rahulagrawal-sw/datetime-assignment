@@ -1,4 +1,4 @@
-#Instructions to run this assignment
+# Instructions to run this assignment
 You can change datetime input values in Main.java class and run this as simple java application using any editor
 Also you can run individual JUnit's (created unit JUnit 5 / Jupitor)
 
@@ -16,9 +16,9 @@ Using OOAD,OOPS  concepts, write  a java program that  :
 8)      This program will not use Java Calendar,  LocalDatetime and Day of week api .It can use java util date api for date creation only.
 9)      Add junit test cases
 
-*For example  
+* For example  
 Input date time : 21-01-2021 06:07:10 AM  
 
-*Output:
+* Output:
 Valid Date : 21st-Jan -Twenty Twenty
 Valid Time : Six Hours Seven Minutes Ten Seconds - Morning
