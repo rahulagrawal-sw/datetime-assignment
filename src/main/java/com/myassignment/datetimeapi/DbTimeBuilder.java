@@ -3,6 +3,7 @@ package com.myassignment.datetimeapi;
 import com.myassignment.exception.DbDateTimeException;
 import com.myassignment.exception.DbDateTimeParseException;
 import com.myassignment.exception.DbNoSuchSupportedDateTimePatternException;
+import com.myassignment.model.DbAmPm;
 import com.myassignment.model.DbTime;
 
 public final class DbTimeBuilder {
@@ -10,7 +11,7 @@ public final class DbTimeBuilder {
     private static final String DASH = "-";
     private static final String COLON = ":";
 
-    public DbTime buildTime(String inputTime, String HOUR_PATTERN, String MINUTE_PATTERN, String SECOND_PATTERN) throws DbNoSuchSupportedDateTimePatternException, DbDateTimeParseException, DbDateTimeException {
+    public DbTime buildTime(String inputTime, DbAmPm dbAmPm, String HOUR_PATTERN, String MINUTE_PATTERN, String SECOND_PATTERN) throws DbNoSuchSupportedDateTimePatternException, DbDateTimeParseException, DbDateTimeException {
         // --------------- Split Time Parts ---------------------------
         String[] timeParts = inputTime.split(COLON);
         if (timeParts == null || timeParts.length != 3) {
@@ -60,6 +61,6 @@ public final class DbTimeBuilder {
             throw new DbNoSuchSupportedDateTimePatternException("No such supported pattern for given time : " + inputTime);
         }
 
-        return new DbTime(hour, minute, second);
+        return new DbTime(hour, minute, second, dbAmPm);
     }
 }

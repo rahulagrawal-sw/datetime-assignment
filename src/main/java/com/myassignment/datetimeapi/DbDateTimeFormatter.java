@@ -66,7 +66,7 @@ public final class DbDateTimeFormatter {
         final String secondPatternLocal = timeParts[2];
 
         // --------------- AM PM Part ---------------------------
-        final String amPmPatternLocal [] = parts[2].split(SLASH);
+        final String amPmPatternLocal[] = parts[2].split(SLASH);
         if (amPmPatternLocal == null || amPmPatternLocal.length != 2) {
             throw new DbInvalidDateTimePatternException("Invalid date time input : " + pattern);
         }
@@ -94,10 +94,10 @@ public final class DbDateTimeFormatter {
 
         //build immutable date & time objects using formatter
         DbDate dbDate = new DbDateBuilder().buildDate(parts[0], DAY_PATTERN, MONTH_PATTERN, YEAR_PATTERN);
-        DbTime dbTime = new DbTimeBuilder().buildTime(parts[1], HOUR_PATTERN, MINUTE_PATTERN, SECOND_PATTERN);
 
-        DbAmPm dbAmPmEnum = DbAmPm.of(parts[2]);
+        DbAmPm dbAmPm = DbAmPm.of(parts[2]);
+        DbTime dbTime = new DbTimeBuilder().buildTime(parts[1], dbAmPm, HOUR_PATTERN, MINUTE_PATTERN, SECOND_PATTERN);
 
-        return new DbDateTime(dbDate, dbTime, dbAmPmEnum);
+        return new DbDateTime(dbDate, dbTime, dbAmPm);
     }
 }

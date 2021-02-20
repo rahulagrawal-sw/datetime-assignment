@@ -17,10 +17,16 @@ public class DbTime implements Serializable {
      */
     private final byte second;
 
-    public DbTime(byte hour, byte minute, byte second) {
+    /**
+     * The AM/PM
+     */
+    private final DbAmPm dbAmPm;
+
+    public DbTime(byte hour, byte minute, byte second, DbAmPm dbAmPm) {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
+        this.dbAmPm = dbAmPm;
     }
 
     @Override
@@ -30,6 +36,8 @@ public class DbTime implements Serializable {
                 ConstantMap.oneToSixtyInWordsMap.get(Integer.valueOf(minute)) +
                 " Minutes " +
                 ConstantMap.oneToSixtyInWordsMap.get(Integer.valueOf(second)) +
-                " Seconds";
+                " Seconds" +
+                " " +
+                dbAmPm.toString();
     }
 }
