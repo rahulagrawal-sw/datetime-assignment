@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class DbDateTimeTest {
 
     DbDate dbDate = new DbDate((short) 11, DbMonth.Aug, "2020");
-    DbTime dbTime = new DbTime((byte) 10, (byte) 12, (byte) 55);
+    DbTime dbTime = new DbTime((byte) 10, (byte) 12, (byte) 55, DbAmPm.PM);
 
     @Test
     @DisplayName("Given Valid Date Time AM/PM input then should create DbDateTime instance")

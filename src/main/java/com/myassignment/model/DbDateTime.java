@@ -4,7 +4,6 @@ import com.myassignment.datetimeapi.DbDateTimeFormatter;
 import com.myassignment.exception.DbDateTimeException;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class DbDateTime implements Serializable {
 
@@ -29,7 +28,7 @@ public class DbDateTime implements Serializable {
     }
 
     public static DbDateTime parse(String inputDateTime, DbDateTimeFormatter formatter) throws DbDateTimeException {
-        if(formatter == null) {
+        if (formatter == null) {
             throw new DbDateTimeException("formatter is null");
         }
         return formatter.parse(inputDateTime);
@@ -50,7 +49,6 @@ public class DbDateTime implements Serializable {
     @Override
     public String toString() {
         return dbDate.toString() +
-                " " + dbTime.toString() +
-                " " + dbAmPmEnum.toString();
+                " " + dbTime.toString();
     }
 }

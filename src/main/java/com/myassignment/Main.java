@@ -13,6 +13,6 @@ public class Main {
         DbDateTime dateTime = DbDateTime.parse(input1, formatter);
 
         System.out.println(String.format("Valid Date: %s", dateTime.getDbDate().toString()));
-        System.out.println(String.format("Valid Time: %s - %s", dateTime.getDbTime().toString(), dateTime.getDbAmPmEnum().toString()));
+        System.out.println(String.format("Valid Time: %s", dateTime.getDbTime().toString()));
     }
 }
