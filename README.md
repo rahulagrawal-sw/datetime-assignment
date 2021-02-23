@@ -1,3 +1,8 @@
+# Recent changes
+1) Actual model classes implmenetation like (DbDateTime, DbDate, DbTime) were Final, but forgot to add Final keyword at class level, that's corrected now.
+2) DateUtil method, was using unnecessary method parameter - removed that
+3) As given more time to read / think code, has improved few classes to make them better redable and modular.
+
 # Instructions to run this assignment
 You can change datetime input values in Main.java class and run this as simple java application using any editor
 
