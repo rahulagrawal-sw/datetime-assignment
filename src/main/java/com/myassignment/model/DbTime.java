@@ -2,7 +2,7 @@ package com.myassignment.model;
 
 import java.io.Serializable;
 
-public class DbTime implements Serializable {
+public final class DbTime implements Serializable {
 
     /**
      * The hour.

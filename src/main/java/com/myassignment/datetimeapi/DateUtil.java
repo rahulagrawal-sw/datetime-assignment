@@ -6,8 +6,8 @@ public abstract class DateUtil {
         return year % 4 == 0;
     }
 
-    public static boolean validDaysInFeb(int year, int month, int day) {
-        if(DateUtil.isLeap(year)) {
+    public static boolean validDaysInFeb(int year, int day) {
+        if (DateUtil.isLeap(year)) {
             //if leap year then 29 days
             return day <= 29 && day >= 1;
         } else {

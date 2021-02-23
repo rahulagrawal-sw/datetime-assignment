@@ -5,7 +5,7 @@ import com.myassignment.exception.DbDateTimeException;
 
 import java.io.Serializable;
 
-public class DbDateTime implements Serializable {
+public final class DbDateTime implements Serializable {
 
     /**
      * The date part.

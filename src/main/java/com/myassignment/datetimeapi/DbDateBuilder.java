@@ -7,9 +7,7 @@ import com.myassignment.model.DbDate;
 import com.myassignment.model.DbMonth;
 
 public final class DbDateBuilder {
-    private static final String SPACE = " ";
     private static final String DASH = "-";
-    private static final String COLON = ":";
 
     public DbDate buildDate(String inputDate, String DAY_PATTERN, String MONTH_PATTERN, String YEAR_PATTERN) throws DbNoSuchSupportedDateTimePatternException, DbDateTimeParseException, DbDateTimeException {
         // --------------- Split Date Parts ---------------------------
@@ -52,16 +50,16 @@ public final class DbDateBuilder {
             }
             day = Short.valueOf(dayStr);
 
-            if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (day < 1 || day > 31)) {
+            if (isOddMonth(month) && (day < 1 || day > 31)) {
                 throw new DbDateTimeException("Invalid Date (day must be between 1 to 31) : " + inputDate);
             }
 
-            if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 || day > 30)) {
+            if (isEvenMonthExceptFeb(month) && (day < 1 || day > 30)) {
                 throw new DbDateTimeException("Invalid Date (day must be between 1 to 30) : " + inputDate);
             }
 
             //If month is February, validate days in February
-            if (month == 2 && !DateUtil.validDaysInFeb(year, month, day)) {
+            if (month == 2 && !DateUtil.validDaysInFeb(year, day)) {
                 throw new DbDateTimeException("Invalid Date (incorrect days for Feb month) : " + inputDate);
             }
         } else {
@@ -69,6 +67,14 @@ public final class DbDateBuilder {
         }
 
         return new DbDate(day, dbMonth, yearStr);
+    }
+
+    private boolean isEvenMonthExceptFeb(short month) {
+        return month == 4 || month == 6 || month == 9 || month == 11;
+    }
+
+    private boolean isOddMonth(short month) {
+        return month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12;
     }
 
 }

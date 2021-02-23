@@ -2,7 +2,7 @@ package com.myassignment.model;
 
 import java.io.Serializable;
 
-public class DbDate implements Serializable {
+public final class DbDate implements Serializable {
 
     /**
      * The year.

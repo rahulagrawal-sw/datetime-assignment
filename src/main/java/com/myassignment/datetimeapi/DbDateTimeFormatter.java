@@ -71,7 +71,8 @@ public final class DbDateTimeFormatter {
             throw new DbInvalidDateTimePatternException("Invalid date time input : " + pattern);
         }
 
-        return new DbDateTimeFormatter(dayPatternLocal, monthPatternLocal, yearPatternLocal, hourPatternLocal, minutePatternLocal, secondPatternLocal, parts[2]);
+        return new DbDateTimeFormatter(dayPatternLocal, monthPatternLocal, yearPatternLocal,
+                hourPatternLocal, minutePatternLocal, secondPatternLocal, parts[2]);
     }
 
     /**
