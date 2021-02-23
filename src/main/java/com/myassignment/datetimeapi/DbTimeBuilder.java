@@ -7,8 +7,6 @@ import com.myassignment.model.DbAmPm;
 import com.myassignment.model.DbTime;
 
 public final class DbTimeBuilder {
-    private static final String SPACE = " ";
-    private static final String DASH = "-";
     private static final String COLON = ":";
 
     public DbTime buildTime(String inputTime, DbAmPm dbAmPm, String HOUR_PATTERN, String MINUTE_PATTERN, String SECOND_PATTERN) throws DbNoSuchSupportedDateTimePatternException, DbDateTimeParseException, DbDateTimeException {
